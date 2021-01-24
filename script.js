@@ -16,7 +16,7 @@ function randomizer(array) {
 
 var userPrompts = function () {
   var passLength = parseInt(prompt("How long would you like your password to be?"));
-  if (passLength <= 8 || passLength >= 129 || passLength == NaN) {
+  if (passLength <= 8 || passLength >= 129) {
     prompt("Please pick 8-128")
   }
 
@@ -39,80 +39,73 @@ var userPrompts = function () {
   };
   console.log(userChoices)
   return userChoices;
+}
 
-  function generatePassword() {
-    //need variable to store the wants
-    //variable saving password to return
-    userInteractions = userPrompts()
-    var chosen = []
-    var validateChar = []
-    //variable holding prompt for password length
+function generatePassword() {
+  //need variable to store the wants
+  //variable saving password to return
+  userInteractions = userPrompts()
+  var chosen = []
+  var validateChar = []
+  //variable holding prompt for password length
 
-    if (userInteractions.chosenSpecial) {
-      chosen = chosen.concat(special)
-      chosen.push(randomizer(special))
-      console.log(chosen)
-    }
-    //do not need right away if code does not work ask Maria
-    if (userInteractions.chosenNumber) {
-      chosen = chosen.concat(number)
-      chosen.push(randomizer(number))
-      console.log(chosen)
-    }
+  if (userInteractions.chosenSpecial) {
+    chosen = chosen.concat(special)
+    chosen.push(randomizer(special))
+    console.log(chosen)
+  }
+  //do not need right away if code does not work ask Maria
+  if (userInteractions.chosenNumber) {
+    chosen = chosen.concat(number)
+    chosen.push(randomizer(number))
+    console.log(chosen)
+  }
 
-    if (userInteractions.chosenUpper) {
-      chosen = chosen.concat(upper)
-      chosen.push(randomizer(upper))
-      console.log(chosen)
-    }
+  if (userInteractions.chosenUpper) {
+    chosen = chosen.concat(upper)
+    chosen.push(randomizer(upper))
+    console.log(chosen)
+  }
 
-    if (userInteractions.chosenLower) {
-      chosen = chosen.concat(lower)
-      chosen.push(randomizer(lower))
-      console.log(chosen)
-    }
-
-
-    //for loop to loop through this array
-
-    for (i = 0; i < userChoices.passLength; i++) {
-      var password = randomizer(chosen)
-      validateChar.push(password)
-      finalPassword += possible[i]
-      console.log(password)
-
-    }
-
-    //for loop to loop through this array
-    for (i = 0; i < userInteractions.chosenLength; i++) {
-      var password = randomizer(chosen)
-      validateChar.push(password)
-      console.log(password)
-    }
-
-    console.log(validateChar.join(""))
-
-    return validateChar.join("")
-
-
-
-
+  if (userInteractions.chosenLower) {
+    chosen = chosen.concat(lower)
+    chosen.push(randomizer(lower))
+    console.log(chosen)
   }
 
 
+  //for loop to loop through this array
 
-  // Assignment Code
-  var generateBtn = document.querySelector("#generate");
-
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
+  for (i = 0; i < userInteractions.chosenLength; i++) {
+    var password = randomizer(chosen)
+    validateChar.push(password)
+    console.log(password)
 
   }
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+  console.log(validateChar.join(""))
+
+  return validateChar.join("")
+
+
+
+
+}
+
+
+
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
