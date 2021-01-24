@@ -6,6 +6,12 @@ var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
 
 //write function called generatePassword
 //TODO we have to return the password in function(generatePassword)
+function randomizer(a) {
+
+  var randomIndex = Math.floor(Math.random() * a.length)
+  var ranChar = a[randomIndex];
+  return ranChar
+}
 
 var generatePassword = function () {
   //need variable to store the wants
@@ -27,7 +33,7 @@ var generatePassword = function () {
   //we need a confirm to see if want lower characters
   var hasLower = confirm("Would you like lower case letters?")
   //we need a confirm to see if want upper characters
-  var hasUpper = confirm("Would you like upper case letter?")
+  var hasUpper = confirm("Would you like upper case letters?")
   var userChoices = {
     chosenLength: passLength,
     chosenSpecial: hasSpecial,
@@ -43,40 +49,47 @@ var generatePassword = function () {
     alert('pick at least one')
 
   }
-
-  // if () {
-
-  // }
-
   //we need 4 ifs to see what characters they want from those characters to store into array
 
-  if (hasSpecial) { }
-  chosen.concat(special)
-  validateChar.push(randomizer(special))//do not need right away if code does not work ask Maria
-  if (hasNumber) { }
-  chosen.concat(number)
-  validateChar.push(randomizer(special))
-  if (hasUpper) { }
-  chosen.concat(upper)
-  validateChar.push(randomizer(special))
-  if (hasLower) { }
-  chosen.concat(lower)
-  validateChar.push(randomizer(special))
+  if (userChoices.chosenSpecial) {
+    chosen = chosen.concat(special)
+    chosen.push(randomizer(special))
+    console.log(chosen)
+  }
+  //do not need right away if code does not work ask Maria
+  if (userChoices.chosenNumber) {
+    chosen = chosen.concat(number)
+    chosen.push(randomizer(number))
+    console.log(chosen)
+  }
+
+  if (userChoices.chosenUpper) {
+    chosen = chosen.concat(upper)
+    chosen.push(randomizer(upper))
+    console.log(chosen)
+  }
+
+  if (userChoices.chosenLower) {
+    chosen = chosen.concat(lower)
+    chosen.push(randomizer(lower))
+    console.log(chosen)
+  }
+
 
   //for loop to loop through this array
 
-  //   // for () {
-
-
-  // }
-
-  //return finalPassword;
-
-
-  function randomizer() {
-
-    var randomIndex = Math.floor(Math.random() * ``)
+  for (i = 0; i < userChoices.length; i++) {
+    var password = randomizer(chosen)
+    validateChar.push(password)
+    console.log(password)
   }
+
+  console.log(validateChar.join(""))
+
+  return validateChar.join("")
+
+
+
 
 
 }
