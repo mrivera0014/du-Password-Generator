@@ -37,7 +37,6 @@ var userPrompts = function () {
     chosenLower: hasLower,
     chosenUpper: hasUpper
   };
-  console.log(userChoices)
   return userChoices;
 }
 
@@ -52,25 +51,21 @@ function generatePassword() {
   if (userInteractions.chosenSpecial) {
     chosen = chosen.concat(special)
     chosen.push(randomizer(special))
-    console.log(chosen)
   }
   //do not need right away if code does not work ask Maria
   if (userInteractions.chosenNumber) {
     chosen = chosen.concat(number)
     chosen.push(randomizer(number))
-    console.log(chosen)
   }
 
   if (userInteractions.chosenUpper) {
     chosen = chosen.concat(upper)
     chosen.push(randomizer(upper))
-    console.log(chosen)
   }
 
   if (userInteractions.chosenLower) {
     chosen = chosen.concat(lower)
     chosen.push(randomizer(lower))
-    console.log(chosen)
   }
 
 
@@ -79,12 +74,8 @@ function generatePassword() {
   for (i = 0; i < userInteractions.chosenLength; i++) {
     var password = randomizer(chosen)
     validateChar.push(password)
-    console.log(password)
 
   }
-
-  console.log(validateChar.join(""))
-
   return validateChar.join("")
 
 
