@@ -6,12 +6,14 @@ var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
 
 //write function called generatePassword
 //TODO we have to return the password in function(generatePassword)
-function randomizer(a) {
 
-  var randomIndex = Math.floor(Math.random() * a.length)
-  var ranChar = a[randomIndex];
+function randomizer(array) {
+
+  var randomIndex = Math.floor(Math.random() * array.length)
+  var ranChar = array[randomIndex];
   return ranChar
 }
+
 
 var generatePassword = function () {
   //need variable to store the wants
@@ -78,16 +80,17 @@ var generatePassword = function () {
 
   //for loop to loop through this array
 
-  for (i = 0; i < userChoices.length; i++) {
+  for (i = 0; i < userChoices.passLength; i++) {
     var password = randomizer(chosen)
     validateChar.push(password)
+    finalPassword += possible[i]
     console.log(password)
+
   }
 
   console.log(validateChar.join(""))
 
   return validateChar.join("")
-
 
 
 
