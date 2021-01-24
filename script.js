@@ -14,18 +14,12 @@ function randomizer(array) {
   return ranChar
 }
 
-
-var generatePassword = function () {
-  //need variable to store the wants
-  //variable saving password to return
-  var chosen = []
-  var validateChar = []
-  var finalPassword = ('')
-  //variable holding prompt for password length
+var userPrompts = function () {
   var passLength = parseInt(prompt("How long would you like your password to be?"));
   if (passLength <= 8 || passLength >= 129 || passLength == NaN) {
     prompt("Please pick 8-128")
   }
+
   //prompts return strings I will need to change to numbers to validate --parseInt()
   //we need an if statement to make sure they are between 8-128 characters (number)
   //we need a confirm to see if want special characters
@@ -44,72 +38,79 @@ var generatePassword = function () {
     chosenUpper: hasUpper
   };
   console.log(userChoices)
-  //need an if statement to make sure they pick at least ONE character
+  return userChoices;
+
+  var generatePassword = function () {
+    //need variable to store the wants
+    //variable saving password to return
+    var chosen = []
+    var validateChar = []
+    var finalPassword = ('')
+    //variable holding prompt for password length
+
+    if (hasSpecial === 'false' && hasNumber === 'false') {
+      alert('pick at least one')
+
+    }
+    //we need 4 ifs to see what characters they want from those characters to store into array
+
+    if (userChoices.chosenSpecial) {
+      chosen = chosen.concat(special)
+      chosen.push(randomizer(special))
+      console.log(chosen)
+    }
+    //do not need right away if code does not work ask Maria
+    if (userChoices.chosenNumber) {
+      chosen = chosen.concat(number)
+      chosen.push(randomizer(number))
+      console.log(chosen)
+    }
+
+    if (userChoices.chosenUpper) {
+      chosen = chosen.concat(upper)
+      chosen.push(randomizer(upper))
+      console.log(chosen)
+    }
+
+    if (userChoices.chosenLower) {
+      chosen = chosen.concat(lower)
+      chosen.push(randomizer(lower))
+      console.log(chosen)
+    }
 
 
-  if (hasSpecial === 'false' && hasNumber === 'false') {
-    alert('pick at least one')
+    //for loop to loop through this array
+
+    for (i = 0; i < userChoices.passLength; i++) {
+      var password = randomizer(chosen)
+      validateChar.push(password)
+      finalPassword += possible[i]
+      console.log(password)
+
+    }
+
+    console.log(validateChar.join(""))
+
+    return validateChar.join("")
+
+
+
 
   }
-  //we need 4 ifs to see what characters they want from those characters to store into array
-
-  if (userChoices.chosenSpecial) {
-    chosen = chosen.concat(special)
-    chosen.push(randomizer(special))
-    console.log(chosen)
-  }
-  //do not need right away if code does not work ask Maria
-  if (userChoices.chosenNumber) {
-    chosen = chosen.concat(number)
-    chosen.push(randomizer(number))
-    console.log(chosen)
-  }
-
-  if (userChoices.chosenUpper) {
-    chosen = chosen.concat(upper)
-    chosen.push(randomizer(upper))
-    console.log(chosen)
-  }
-
-  if (userChoices.chosenLower) {
-    chosen = chosen.concat(lower)
-    chosen.push(randomizer(lower))
-    console.log(chosen)
-  }
 
 
-  //for loop to loop through this array
 
-  for (i = 0; i < userChoices.passLength; i++) {
-    var password = randomizer(chosen)
-    validateChar.push(password)
-    finalPassword += possible[i]
-    console.log(password)
+  // Assignment Code
+  var generateBtn = document.querySelector("#generate");
+
+  // Write password to the #password input
+  function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
 
   }
 
-  console.log(validateChar.join(""))
-
-  return validateChar.join("")
-
-
-
-
-}
-
-
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
