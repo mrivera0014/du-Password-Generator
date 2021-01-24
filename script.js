@@ -40,39 +40,33 @@ var userPrompts = function () {
   console.log(userChoices)
   return userChoices;
 
-  var generatePassword = function () {
+  function generatePassword() {
     //need variable to store the wants
     //variable saving password to return
+    userInteractions = userPrompts()
     var chosen = []
     var validateChar = []
-    var finalPassword = ('')
     //variable holding prompt for password length
 
-    if (hasSpecial === 'false' && hasNumber === 'false') {
-      alert('pick at least one')
-
-    }
-    //we need 4 ifs to see what characters they want from those characters to store into array
-
-    if (userChoices.chosenSpecial) {
+    if (userInteractions.chosenSpecial) {
       chosen = chosen.concat(special)
       chosen.push(randomizer(special))
       console.log(chosen)
     }
     //do not need right away if code does not work ask Maria
-    if (userChoices.chosenNumber) {
+    if (userInteractions.chosenNumber) {
       chosen = chosen.concat(number)
       chosen.push(randomizer(number))
       console.log(chosen)
     }
 
-    if (userChoices.chosenUpper) {
+    if (userInteractions.chosenUpper) {
       chosen = chosen.concat(upper)
       chosen.push(randomizer(upper))
       console.log(chosen)
     }
 
-    if (userChoices.chosenLower) {
+    if (userInteractions.chosenLower) {
       chosen = chosen.concat(lower)
       chosen.push(randomizer(lower))
       console.log(chosen)
@@ -87,6 +81,13 @@ var userPrompts = function () {
       finalPassword += possible[i]
       console.log(password)
 
+    }
+
+    //for loop to loop through this array
+    for (i = 0; i < userInteractions.chosenLength; i++) {
+      var password = randomizer(chosen)
+      validateChar.push(password)
+      console.log(password)
     }
 
     console.log(validateChar.join(""))
@@ -114,3 +115,4 @@ var userPrompts = function () {
 
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
+
