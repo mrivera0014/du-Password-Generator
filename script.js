@@ -5,26 +5,37 @@ var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 //write function called generatePassword
-//TODO we have to return the password in funtion(generatePassword)
+//TODO we have to return the password in function(generatePassword)
 
-function generatePassword() {
+var generatePassword = function () {
   //need variable to store the wants
   //variable saving password to return
   var chosen = []
-  var = validateChar []
-  var = finalPassword('')
+  var validateChar = []
+  var finalPassword = ('')
   //variable holding prompt for password length
   var passLength = parseInt(prompt("How long would you like your password to be?"));
-  //prompts return strings I will need to change to numbers to validate
-  //we need an if statement to make sure they are between 8-128 characters
+  if (passLength <= 8 || passLength >= 129 || passLength == NaN) {
+    prompt("Please pick 8-128")
+  }
+  //prompts return strings I will need to change to numbers to validate --parseInt()
+  //we need an if statement to make sure they are between 8-128 characters (number)
   //we need a confirm to see if want special characters
-  var hasSpecial = confirm
+  var hasSpecial = confirm("Would you like special character?")
   //we need a confirm to see if want numbers characters
-  var hasNumber = confirm
+  var hasNumber = confirm("Would you like numbers?")
   //we need a confirm to see if want lower characters
-  var hasLower = confirm
+  var hasLower = confirm("Would you like lower case letters?")
   //we need a confirm to see if want upper characters
-
+  var hasUpper = confirm("Would you like upper case letter?")
+  var userChoices = {
+    chosenLength: passLength,
+    chosenSpecial: hasSpecial,
+    chosenNumber: hasNumber,
+    chosenLower: hasLower,
+    chosenUpper: hasUpper
+  };
+  console.log(userChoices)
   //need an if statement to make sure they pick at least ONE character
 
 
@@ -33,9 +44,9 @@ function generatePassword() {
 
   }
 
-  if () {
+  // if () {
 
-  }
+  // }
 
   //we need 4 ifs to see what characters they want from those characters to store into array
 
@@ -54,17 +65,17 @@ function generatePassword() {
 
   //for loop to loop through this array
 
-  for () {
+  //   // for () {
 
 
-  }
+  // }
 
   //return finalPassword;
 
 
   function randomizer() {
 
-    var randomIndex = Math.floor()
+    var randomIndex = Math.floor(Math.random() * ``)
   }
 
 
