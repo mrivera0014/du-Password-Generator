@@ -9,3 +9,8 @@ When I finally started to understand how JS process each line of code I began wi
 Of course, writing the code didn't go smoothly. I did small mistakes such as forgetting a semi-colon or comma, copying a line of code to move it and leaving a bracket behind, and even just forgetting to capitalize a letter in a function. All of it was a learning experience though and I learned how to use the console to help me find where the mistakes were made.
 
 I know that I need to keep practicing and will continue to do so. I cannot wait until all of this becomes something that I can do with more confidence.
+
+https://github.com/mrivera0014/du-week-2-password-generator
+
+https://mrivera0014.github.io/du-week-2-password-generator/
+
