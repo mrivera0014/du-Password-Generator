@@ -10,6 +10,10 @@ Of course, writing the code didn't go smoothly. I did small mistakes such as for
 
 I know that I need to keep practicing and will continue to do so. I cannot wait until all of this becomes something that I can do with more confidence.
 
+![Pass-Generator1](assets/Pass-Generator1.PNG)
+![Pass-Generator2](assets/Pass-Generator2.PNG)
+
+
 https://github.com/mrivera0014/du-week-2-password-generator
 
 https://mrivera0014.github.io/du-week-2-password-generator/
