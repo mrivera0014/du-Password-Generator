@@ -1,20 +1,20 @@
 # du-week-2-password-generator
 
+## Description
 In this project I modified a starter code that allowed employees to generate random passcodes based on criteria that they selected. 
 
-This project definitely tested my knowledge and skills on Javascript. My biggest challenge for this project was simply getting started. I found that I was struggling to think the way that JS would when reading the code. What helped was re-watching the class videos and commenting what JS would do as it read each line of code. Pseudo coding is still a little difficult but I plan on practicing it more to improve my thought process.
+This application will be perfect for creating a secure password.
 
-When I finally started to understand how JS process each line of code I began with the simple stuff such as what variables are we going to need? How are we going to tell JS when to prompt a window? How is JS going to store the user inputs? and from there the code just started to come into place.
+## Questions
+If you have any questions contact me at mrivera0014@gmail.com.
+Find more of my work at (https://github.com/mrivera0014/)
 
-Of course, writing the code didn't go smoothly. I did small mistakes such as forgetting a semi-colon or comma, copying a line of code to move it and leaving a bracket behind, and even just forgetting to capitalize a letter in a function. All of it was a learning experience though and I learned how to use the console to help me find where the mistakes were made.
-
-I know that I need to keep practicing and will continue to do so. I cannot wait until all of this becomes something that I can do with more confidence.
-
+## Screenshots
 ![Pass-Generator1](Images/Pass-Generator1.PNG)
 ![Pass-Generator2](Images/Pass-Generator2.PNG)
 
+## Links
+[Link to Github repository](https://github.com/mrivera0014/du-week-2-password-generator)
 
-https://github.com/mrivera0014/du-week-2-password-generator
-
-https://mrivera0014.github.io/du-week-2-password-generator/
+[Link to Deployed application](https://mrivera0014.github.io/du-week-2-password-generator/)
 
